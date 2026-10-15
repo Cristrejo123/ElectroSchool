@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroSchool | Clases de Robótica a Domicilio</title>
+  <meta name="description" content="Clases de robótica a domicilio, particulares y grupales, para niños, adolescentes y adultos. Materiales incluidos y un mini proyecto en cada clase.">
+  <link rel="icon" href="img/logo-circular.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=League+Spartan:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="header__logo" aria-label="ElectroSchool, inicio">
+        <img src="img/logo-horizontal.png" alt="ElectroSchool">
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#aprende">Qué se aprende</a>
+        <a href="#clases">Clases</a>
+        <a href="#modalidades">Modalidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#faq">Preguntas</a>
+        <a href="https://wa.me/56996120169?text=Hola%20ElectroSchool%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20clases%20de%20rob%C3%B3tica" class="btn btn--accent btn--sm" target="_blank" rel="noopener">Agendar clase</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="video-wall video-wall--hero" aria-hidden="true">
+      <video src="videos/brazo-robotico.mov" poster="img/videos/brazo-robotico.jpg" muted loop playsinline preload="auto" data-auto></video>
+      <video src="videos/torreta-servos.mov" poster="img/videos/torreta-servos.jpg" muted loop playsinline preload="none" data-auto></video>
+      <video src="videos/robot-explorador.mov" poster="img/videos/robot-explorador.jpg" muted loop playsinline preload="none" data-auto></video>
+      <video src="videos/mano-robotica.mov" poster="img/videos/mano-robotica.jpg" muted loop playsinline preload="none" data-auto></video>
+    </div>
+    <div class="hero__shade"></div>
+
+    <div class="container hero__content">
+      <p class="eyebrow" data-reveal>Clases de robótica a domicilio</p>
+      <h1 data-reveal style="--d:.1s">Aprende robótica construyendo, en tu propia casa.</h1>
+      <p class="hero__lead" data-reveal style="--d:.2s">Clases particulares y grupales para niños, adolescentes y adultos, con todos los materiales incluidos. Partimos desde cero o desde donde estés.</p>
+      <div class="hero__actions" data-reveal style="--d:.3s">
+        <a href="https://wa.me/56996120169?text=Hola%20ElectroSchool%2C%20quiero%20agendar%20una%20clase%20de%20rob%C3%B3tica" class="btn btn--accent btn--lg" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43a9.38 9.38 0 0 1 9.43 9.44c0 5.2-4.24 9.43-9.44 9.43zm8.03-17.47A11.3 11.3 0 0 0 12.05.7C5.79.7.7 5.79.7 12.05c0 2 .52 3.95 1.52 5.67L.6 23.3l5.72-1.5a11.3 11.3 0 0 0 5.72 1.46h.01c6.26 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.32-8.02z"/></svg>
+          Agenda por WhatsApp
+        </a>
+        <a href="#proyectos" class="btn btn--ghost btn--lg">Ver proyectos</a>
+      </div>
+    </div>
+
+    <a href="#intro" class="hero__scroll" aria-label="Seguir bajando"><span></span></a>
+  </section>
+
+  <!-- ===== INTRO ===== -->
+  <section class="intro" id="intro">
+    <div class="container">
+      <p class="intro__statement" data-reveal>Aprendemos un concepto y lo aplicamos de inmediato: en cada clase armamos un <em>mini proyecto</em> que funciona, adaptado a la edad y al ritmo de cada estudiante.</p>
+
+      <div class="facts">
+        <div class="fact" data-reveal>
+          <span class="fact__num">01</span>
+          <h3>A domicilio</h3>
+          <p>Sin traslados. La clase ocurre en tu casa, en un espacio cómodo y conocido.</p>
+        </div>
+        <div class="fact" data-reveal style="--d:.1s">
+          <span class="fact__num">02</span>
+          <h3>Individual o grupal</h3>
+          <p>Uno a uno, o en grupo con hermanos, amigos o compañeros.</p>
+        </div>
+        <div class="fact" data-reveal style="--d:.2s">
+          <span class="fact__num">03</span>
+          <h3>Materiales incluidos</h3>
+          <p>Llegamos con todo lo necesario. No tienes que comprar nada.</p>
+        </div>
+        <div class="fact" data-reveal style="--d:.3s">
+          <span class="fact__num">04</span>
+          <h3>Para cualquier nivel</h3>
+          <p>Empezamos por lo básico o retomamos donde lo dejaste.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== QUÉ SE APRENDE ===== -->
+  <section class="learn" id="aprende">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow eyebrow--dark">Qué se aprende</p>
+        <h2>Tres áreas que se aprenden haciendo</h2>
+      </header>
+      <div class="learn__grid">
+        <div class="learn__item" data-reveal>
+          <h3>Electrónica</h3>
+          <p>Circuitos, luces, motores, sensores y componentes. Entender cómo fluye la energía y cómo conectar cada pieza.</p>
+        </div>
+        <div class="learn__item" data-reveal style="--d:.1s">
+          <h3>Programación</h3>
+          <p>En bloques para empezar, o con código para quienes quieren ir más allá. Lógica, secuencias y decisiones.</p>
+        </div>
+        <div class="learn__item" data-reveal style="--d:.2s">
+          <h3>Robótica</h3>
+          <p>Unir electrónica y programación para construir máquinas que se mueven, reaccionan y resuelven tareas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLASES ===== -->
+  <section class="programs" id="clases">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow eyebrow--dark">Clases</p>
+        <h2>Una clase distinta para cada etapa</h2>
+      </header>
+
+      <article class="program">
+        <div class="program__media" data-reveal>
+          <video src="videos/robot-explorador.mov" poster="img/videos/robot-explorador.jpg" muted loop playsinline preload="none" data-auto></video>
+        </div>
+        <div class="program__text" data-reveal style="--d:.15s">
+          <span class="program__label">Niños</span>
+          <h3>Primeros circuitos, primeros robots</h3>
+          <p>Encender una luz, mover un motor, lograr que un robot responda. Con programación en bloques y un mini proyecto en cada clase, aprenden lógica casi sin darse cuenta.</p>
+        </div>
+      </article>
+
+      <article class="program program--reverse">
+        <div class="program__media" data-reveal>
+          <video src="videos/sensor-ultrasonico.mov" poster="img/videos/sensor-ultrasonico.jpg" muted loop playsinline preload="none" data-auto></video>
+        </div>
+        <div class="program__text" data-reveal style="--d:.15s">
+          <span class="program__label">Adolescentes</span>
+          <h3>Arduino, sensores y código real</h3>
+          <p>Mini proyectos con sensores de distancia, pantallas, servos y controles remotos. Programan en bloques o con código y entienden cómo funciona cada pieza.</p>
+        </div>
+      </article>
+
+      <article class="program">
+        <div class="program__media" data-reveal>
+          <video src="videos/pantalla-lcd.mov" muted playsinline preload="metadata" data-auto data-start="12" data-end="30"></video>
+        </div>
+        <div class="program__text" data-reveal style="--d:.15s">
+          <span class="program__label">Adultos</span>
+          <h3>Electrónica desde cero, a tu ritmo</h3>
+          <p>Para quienes siempre quisieron entender cómo funcionan las cosas. Desde los fundamentos hasta tus propios proyectos, aplicando lo aprendido en cada clase.</p>
+          <ul class="topics">
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== MODALIDADES ===== -->
+  <section class="modes" id="modalidades">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow eyebrow--dark">Modalidades</p>
+        <h2>Solo o en grupo, siempre en tu casa</h2>
+      </header>
+      <div class="modes__grid">
+        <div class="mode" data-reveal>
+          <span class="mode__label">Clase particular</span>
+          <h3>Uno a uno</h3>
+          <p>Toda la atención en un estudiante. Avanzamos a su ritmo y elegimos proyectos según sus intereses.</p>
+        </div>
+        <div class="mode mode--accent" data-reveal style="--d:.1s">
+          <span class="mode__label">Clase grupal</span>
+          <h3>En grupo</h3>
+          <p>Para hermanos, amigos o compañeros. Aprenden en equipo, comparten ideas y construyen juntos.</p>
+        </div>
+      </div>
+      <p class="modes__note" data-reveal>Ambas modalidades son a domicilio, con materiales incluidos y un proyecto en cada clase.</p>
+    </div>
+  </section>
+
+  <!-- ===== BANDA CON VIDEO ===== -->
+  <section class="band">
+    <div class="video-wall video-wall--band" aria-hidden="true">
+      <video src="videos/mano-robotica.mov" poster="img/videos/mano-robotica.jpg" muted loop playsinline preload="none" data-auto></video>
+      <video src="videos/auto-robot.mov" poster="img/videos/auto-robot.jpg" muted loop playsinline preload="none" data-auto></video>
+      <video src="videos/brazo-robotico.mov" poster="img/videos/brazo-robotico.jpg" muted loop playsinline preload="none" data-auto></video>
+
+    </div>
+    <div class="band__shade"></div>
+    <div class="container band__content">
+      <h2 data-reveal>Con o sin experiencia.</h2>
+      <p data-reveal style="--d:.15s">Algunos llegan sin haber tocado un cable. Otros ya programan y quieren ir más lejos. Las clases parten desde donde está cada estudiante.</p>
+    </div>
+  </section>
+
+  <!-- ===== PROYECTOS ===== -->
+  <section class="projects" id="proyectos">
+    <div class="container projects__head" data-reveal>
+      <div>
+        <p class="eyebrow eyebrow--dark">Proyectos</p>
+        <h2>Hecho en clases</h2>
+        <p class="projects__sub">Algunos de los proyectos que nuestros estudiantes han construido y programado.</p>
+      </div>
+      <div class="projects__nav">
+        <button class="arrow" id="stripPrev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="arrow" id="stripNext" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="strip" id="strip">
+      <figure class="clip">
+        <video src="videos/mano-robotica.mov" poster="img/videos/mano-robotica.jpg" muted loop playsinline preload="none" data-auto></video>
+        <!-- <figcaption>Mano robótica</figcaption> -->
+      </figure>
+      <figure class="clip">
+        <video src="videos/robot-explorador.mov" poster="img/videos/robot-explorador.jpg" muted loop playsinline preload="none" data-auto></video>
+        <!-- <figcaption>Robot explorador</figcaption> -->
+      </figure>
+      <figure class="clip">
+        <video src="videos/torreta-servos.mov" poster="img/videos/torreta-servos.jpg" muted loop playsinline preload="none" data-auto></video>
+        <!-- <figcaption>Torreta con servos</figcaption> -->
+      </figure>
+      <figure class="clip">
+        <video src="videos/brazo-robotico.mov" poster="img/videos/brazo-robotico.jpg" muted loop playsinline preload="none" data-auto></video>
+        <!-- <figcaption>Brazo robótico</figcaption> -->
+      </figure>
+      <figure class="clip">
+        <video src="videos/sensor-ultrasonico.mov" poster="img/videos/sensor-ultrasonico.jpg" muted loop playsinline preload="none" data-auto></video>
+        <!-- <figcaption>Sensor ultrasónico</figcaption> -->
+      </figure>
+      <figure class="clip">
+        <video src="videos/pantalla-lcd.mov" muted playsinline preload="metadata" data-auto data-start="12" data-end="30"></video>
+        <!-- <figcaption>Pantalla LCD</figcaption> -->
+
+      </figure>
+      <figure class="clip">
+        <video src="videos/auto-robot.mov" poster="img/videos/auto-robot.jpg" muted loop playsinline preload="none" data-auto></video>
+        <!-- <figcaption>Auto robot</figcaption> -->
+      
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== CÓMO FUNCIONA ===== -->
+  <section class="how" id="como-funciona">
+    <div class="container">
+      <header class="section-head" data-reveal>
+        <p class="eyebrow eyebrow--dark">Cómo funciona</p>
+        <h2>Agendar es simple</h2>
+      </header>
+      <ol class="steps">
+        <li data-reveal>
+          <span class="steps__num">01</span>
+          <h3>Escríbenos</h3>
+          <p>Por WhatsApp, contándonos la edad y la experiencia del estudiante.</p>
+        </li>
+        <li data-reveal style="--d:.1s">
+          <span class="steps__num">02</span>
+          <h3>Coordinamos</h3>
+          <p>Elegimos juntos el día y el horario que mejor te acomode.</p>
+        </li>
+        <li data-reveal style="--d:.2s">
+          <span class="steps__num">03</span>
+          <h3>Vamos a tu casa</h3>
+          <p>Llegamos con todos los materiales, en modalidad individual o grupal.</p>
+        </li>
+        <li data-reveal style="--d:.3s">
+          <span class="steps__num">04</span>
+          <h3>Un proyecto por clase</h3>
+          <p>Cada clase termina con un mini proyecto que aplica lo aprendido, y el siguiente es un poco más desafiante.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="container faq-layout">
+      <header class="section-head section-head--left" data-reveal>
+        <p class="eyebrow eyebrow--dark">Preguntas frecuentes</p>
+        <h2>Lo que más nos preguntan</h2>
+      </header>
+      <div class="faq" data-reveal style="--d:.1s">
+        <details>
+          <summary>¿Necesito experiencia previa?</summary>
+          <p>No. Tenemos clases para quienes parten desde cero y también para quienes ya saben y quieren seguir avanzando.</p>
+        </details>
+        <details>
+          <summary>¿Para qué edades son las clases?</summary>
+          <p>Trabajamos con niños, adolescentes y adultos. El contenido y la forma de enseñar se adaptan a cada edad.</p>
+        </details>
+        <details>
+          <summary>¿Qué se aprende en las clases?</summary>
+          <p>Electrónica, programación en bloques o con código, y robótica. En cada clase hacemos un mini proyecto para aplicar lo aprendido.</p>
+        </details>
+        <details>
+          <summary>¿Dónde se hacen las clases?</summary>
+          <p>Son a domicilio: vamos directamente a tu casa. Escríbenos para confirmar disponibilidad en tu sector.</p>
+        </details>
+        <details>
+          <summary>¿Tengo que comprar materiales?</summary>
+          <p>No. Todos los materiales van incluidos en la clase: llevamos los componentes y kits necesarios para cada proyecto.</p>
+        </details>
+        <details>
+          <summary>¿Hacen clases grupales?</summary>
+          <p>Sí. Además de las clases particulares, hacemos clases grupales a domicilio, ideales para hermanos, amigos o compañeros.</p>
+        </details>
+        <details>
+          <summary>¿Cómo agendo una clase?</summary>
+          <p>Escríbenos por WhatsApp al <a href="https://wa.me/56996120169" target="_blank" rel="noopener">+56 9 9612 0169</a> y coordinamos día y horario.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta" id="contacto">
+    <div class="video-wall video-wall--cta" aria-hidden="true">
+      <video src="videos/sensor-ultrasonico.mov" poster="img/videos/sensor-ultrasonico.jpg" muted loop playsinline preload="none" data-auto></video>
+      <video src="videos/mano-robotica.mov" poster="img/videos/mano-robotica.jpg" muted loop playsinline preload="none" data-auto></video>
+      <video src="videos/pantalla-lcd.mov" muted playsinline preload="metadata" data-auto data-start="12" data-end="30"></video>
+      <video src="videos/joystick-servos.mp4" poster="img/videos/joystick-servos.jpg" muted loop playsinline preload="none" data-auto></video>
+      <video src="videos/auto-robot.mov" poster="img/videos/auto-robot.jpg" muted loop playsinline preload="none" data-auto></video>
+    </div>
+    <div class="cta__shade"></div>
+    <div class="container cta__content">
+      <h2 data-reveal>Agenda una clase</h2>
+      <p data-reveal style="--d:.1s">Escríbenos y coordinamos día y horario.</p>
+      <div class="cta__actions" data-reveal style="--d:.2s">
+        <a href="https://wa.me/56996120169?text=Hola%20ElectroSchool%2C%20quiero%20agendar%20una%20clase%20de%20rob%C3%B3tica" class="btn btn--accent btn--lg" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        <a href="tel:+56996120169" class="cta__phone">+56 9 9612 0169</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <img src="img/logo-horizontal.png" alt="ElectroSchool" class="footer__logo">
+      <p>Clases de robótica a domicilio, particulares y grupales</p>
+      <p class="footer__copy">© <span id="year"></span> ElectroSchool</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/56996120169?text=Hola%20ElectroSchool%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20clases" class="wa-float" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.32l-.34-.2-3.57.94.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43a9.38 9.38 0 0 1 9.43 9.44c0 5.2-4.24 9.43-9.44 9.43zm8.03-17.47A11.3 11.3 0 0 0 12.05.7C5.79.7.7 5.79.7 12.05c0 2 .52 3.95 1.52 5.67L.6 23.3l5.72-1.5a11.3 11.3 0 0 0 5.72 1.46h.01c6.26 0 11.35-5.09 11.35-11.35 0-3.03-1.18-5.88-3.32-8.02z"/></svg>
+  </a>
+
+  <script>
+    const header = document.getElementById('header');
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('nav');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Header: transparente sobre el video, sólido al bajar
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Menú móvil
+    const setMenu = open => {
+      nav.classList.toggle('nav--open', open);
+      toggle.classList.toggle('is-open', open);
+      header.classList.toggle('menu-open', open);
+      toggle.setAttribute('aria-expanded', open);
+    };
+    toggle.addEventListener('click', () => setMenu(!nav.classList.contains('nav--open')));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+    // Videos: se reproducen solo cuando están en pantalla
+    const videoIO = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        const v = e.target;
+        if (e.isIntersecting && !reduceMotion) {
+          if (v.preload === 'none') v.preload = 'auto';
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.2 });
+    // Videos que parten desde un segundo específico (data-start) y opcionalmente terminan en otro (data-end)
+    document.querySelectorAll('video[data-start]').forEach(v => {
+      const start = parseFloat(v.dataset.start);
+      const end = parseFloat(v.dataset.end) || Infinity;
+      const toStart = () => { v.currentTime = start; };
+      v.addEventListener('loadedmetadata', toStart);
+      // Si tiene data-end, vuelve al inicio al llegar a ese segundo
+      v.addEventListener('timeupdate', () => { if (v.currentTime >= end) toStart(); });
+      v.addEventListener('ended', () => { toStart(); v.play().catch(() => {}); });
+      if (v.readyState >= 1) toStart();
+    });
+    document.querySelectorAll('video[data-auto]').forEach(v => videoIO.observe(v));
+
+    // Carrusel de proyectos
+    const strip = document.getElementById('strip');
+    const step = () => (strip.querySelector('.clip')?.offsetWidth || 280) + 16;
+    document.getElementById('stripPrev').addEventListener('click', () => strip.scrollBy({ left: -step() * 2, behavior: 'smooth' }));
+    document.getElementById('stripNext').addEventListener('click', () => strip.scrollBy({ left: step() * 2, behavior: 'smooth' }));
+
+    // Arrastrar con el mouse
+    let dragging = false, startX = 0, startScroll = 0, moved = false;
+    strip.addEventListener('pointerdown', e => {
+      if (e.pointerType !== 'mouse') return;
+      dragging = true; moved = false; startX = e.clientX; startScroll = strip.scrollLeft;
+      strip.classList.add('is-dragging');
+    });
+    window.addEventListener('pointermove', e => {
+      if (!dragging) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) moved = true;
+      strip.scrollLeft = startScroll - dx;
+    });
+    window.addEventListener('pointerup', () => {
+      if (!dragging) return;
+      dragging = false;
+      strip.classList.remove('is-dragging');
+    });
+    strip.addEventListener('click', e => { if (moved) { e.preventDefault(); e.stopPropagation(); } }, true);
+
+    // Aparición suave al hacer scroll
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
