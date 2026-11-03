@@ -438,24 +438,38 @@
     const heroVideos = [...heroWall.querySelectorAll('video')];
     const slideMQ = window.matchMedia('(max-width: 1000px) and (orientation: portrait)');
     const SLIDE_MS = 5000;
-    let slide = 0, slideTimer = null, heroVisible = false;
+    let slide = 0, slideTimer = null, heroVisible = false, slideToken = 0;
+
+    // Fuerza la descarga de un video (en iPhone cambiar "preload" no basta)
+    const preloadVideo = v => {
+      if (v.readyState === 0 && v.networkState !== HTMLMediaElement.NETWORK_LOADING) {
+        v.preload = 'auto';
+        v.load();
+      }
+    };
 
     const showSlide = i => {
-      slide = i;
-      heroVideos.forEach((v, j) => {
-        const active = j === i;
-        v.classList.toggle('is-active', active);
-        if (active && heroVisible && !reduceMotion) {
-          if (v.preload === 'none') v.preload = 'auto';
-          v.currentTime = 0;
-          v.play().catch(() => {});
-        } else {
-          v.pause();
-        }
-      });
-      // Precarga el siguiente para que el cambio sea fluido
-      const next = heroVideos[(i + 1) % heroVideos.length];
-      if (next.preload === 'none') next.preload = 'auto';
+      const token = ++slideToken;
+      const v = heroVideos[i];
+      // Muestra el video recién cuando ya está reproduciéndose, para no pasar a negro
+      const reveal = () => {
+        if (token !== slideToken) return;
+        slide = i;
+        heroVideos.forEach((o, j) => {
+          o.classList.toggle('is-active', j === i);
+          if (j !== i) o.pause();
+        });
+        if (heroVisible && !reduceMotion && v.paused) v.play().catch(() => {});
+        preloadVideo(heroVideos[(i + 1) % heroVideos.length]);
+      };
+
+      if (!heroVisible || reduceMotion) { reveal(); return; }
+      if (i !== slide && v.readyState >= 1) v.currentTime = 0;
+      preloadVideo(v);
+      v.play().catch(() => {});
+      if (!v.paused && v.readyState >= 3) { reveal(); return; }
+      v.addEventListener('playing', reveal, { once: true });
+      setTimeout(reveal, 3000); // si el navegador no lo reproduce aún, al menos se ve su imagen de portada
     };
 
     const updateSlides = () => {
