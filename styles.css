@@ -350,8 +350,6 @@ h3 { font-size: 1.45rem; letter-spacing: -.01em; }
 @media (max-width: 600px) {
   body { font-size: 16px; }
   .header__logo img { height: 28px; }
-  .video-wall--hero, .video-wall--cta { --cols: 1; }
-  .video-wall--hero video:nth-child(n+2), .video-wall--cta video:nth-child(n+2) { display: none; }
   .video-wall--band { --cols: 2; }
   .video-wall--band video:nth-child(n+3) { display: none; }
   .hero__actions .btn { width: 100%; }
@@ -360,6 +358,12 @@ h3 { font-size: 1.45rem; letter-spacing: -.01em; }
   .projects__nav { display: none; }
   .clip { flex-basis: 68vw; }
   .footer__inner { flex-direction: column; text-align: center; }
+}
+
+/* Pantallas verticales: los muros de video pasan a una cuadrícula de 2 x 2 */
+@media (max-width: 1000px) and (orientation: portrait) {
+  .video-wall--hero, .video-wall--cta { --cols: 2; grid-template-rows: repeat(2, minmax(0, 1fr)); }
+  .video-wall--hero video:nth-child(-n+4), .video-wall--cta video:nth-child(-n+4) { display: block; }
 }
 
 @media (prefers-reduced-motion: reduce) {
