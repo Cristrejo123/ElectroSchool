@@ -360,10 +360,17 @@ h3 { font-size: 1.45rem; letter-spacing: -.01em; }
   .footer__inner { flex-direction: column; text-align: center; }
 }
 
-/* Pantallas verticales: los muros de video pasan a una cuadrícula de 2 x 2 */
+/* Pantallas verticales: la portada muestra un video a la vez, que van pasando,
+   y el CTA pasa a una cuadrícula de 2 x 2 */
 @media (max-width: 1000px) and (orientation: portrait) {
-  .video-wall--hero, .video-wall--cta { --cols: 2; grid-template-rows: repeat(2, minmax(0, 1fr)); }
-  .video-wall--hero video:nth-child(-n+4), .video-wall--cta video:nth-child(-n+4) { display: block; }
+  .video-wall--hero { display: block; }
+  .video-wall--hero video:nth-child(n) { /* :nth-child(n) para ganarle a la regla que oculta el 4.º video */
+    display: block; position: absolute; inset: 0;
+    opacity: 0; transition: opacity 1.2s var(--ease);
+  }
+  .video-wall--hero video.is-active { opacity: 1; }
+  .video-wall--cta { --cols: 2; grid-template-rows: repeat(2, minmax(0, 1fr)); }
+  .video-wall--cta video:nth-child(-n+4) { display: block; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -376,10 +376,60 @@
     toggle.addEventListener('click', () => setMenu(!nav.classList.contains('nav--open')));
     nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
+    // Portada en celular: un video a la vez, que van pasando
+    const heroWall = document.querySelector('.video-wall--hero');
+    const heroVideos = [...heroWall.querySelectorAll('video')];
+    const slideMQ = window.matchMedia('(max-width: 1000px) and (orientation: portrait)');
+    const SLIDE_MS = 5000;
+    let slide = 0, slideTimer = null, heroVisible = false;
+
+    const showSlide = i => {
+      slide = i;
+      heroVideos.forEach((v, j) => {
+        const active = j === i;
+        v.classList.toggle('is-active', active);
+        if (active && heroVisible && !reduceMotion) {
+          if (v.preload === 'none') v.preload = 'auto';
+          v.currentTime = 0;
+          v.play().catch(() => {});
+        } else {
+          v.pause();
+        }
+      });
+      // Precarga el siguiente para que el cambio sea fluido
+      const next = heroVideos[(i + 1) % heroVideos.length];
+      if (next.preload === 'none') next.preload = 'auto';
+    };
+
+    const updateSlides = () => {
+      clearInterval(slideTimer);
+      slideTimer = null;
+      if (!slideMQ.matches) {
+        heroVideos.forEach(v => v.classList.remove('is-active'));
+        return;
+      }
+      showSlide(slide);
+      if (heroVisible && !reduceMotion) {
+        slideTimer = setInterval(() => showSlide((slide + 1) % heroVideos.length), SLIDE_MS);
+      }
+    };
+
+    new IntersectionObserver(([e]) => {
+      heroVisible = e.isIntersecting;
+      updateSlides();
+    }, { threshold: 0.2 }).observe(heroWall);
+
+    slideMQ.addEventListener('change', () => {
+      updateSlides();
+      // Al volver a la vista de computador, los videos de la portada se reactivan según su visibilidad
+      heroVideos.forEach(v => { videoIO.unobserve(v); videoIO.observe(v); });
+    });
+
     // Videos: se reproducen solo cuando están en pantalla
     const videoIO = new IntersectionObserver(entries => {
       entries.forEach(e => {
         const v = e.target;
+        if (slideMQ.matches && heroVideos.includes(v)) return; // los maneja la portada en celular
         if (e.isIntersecting && !reduceMotion) {
           if (v.preload === 'none') v.preload = 'auto';
           v.play().catch(() => {});
